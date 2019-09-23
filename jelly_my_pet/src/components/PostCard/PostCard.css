@@ -1,0 +1,56 @@
+.main-Card {
+  background-color: white;
+  width: 70%;
+  height: 35%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5% auto;
+}
+
+.main-Card img {
+  width: 100%;
+  height: 60%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.post-contents {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 2% auto;
+}
+
+.post-contents-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-contetns-title {
+  font-weight: bold;
+}
+
+.post-contents-petInfo {
+  color: #A56D4D;
+}
+
+.post-contents-main {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-bottom: 2%;
+  border-bottom: 0.2rem solid #FBEFDF;
+}
+
+.post-contents-time {
+  align-self: flex-end;
+  color: #346B91;
+}
