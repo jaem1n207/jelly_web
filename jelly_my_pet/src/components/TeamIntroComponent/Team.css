@@ -10,11 +10,11 @@ html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background: url(../../image/team_background.jpg) no-repeat;
+    background: url('../../image/team_background.jpg');
     background-size: cover;
 }
 
-.main {
+.teamIntro-main {
     display: flex;
     width: 100%;
     height: 100%;
@@ -25,9 +25,9 @@ html, body {
 
 .box {
     text-align: center;
-    background: #FBEFDF;
+    background: #FFFFF3;
     padding: 1.2rem;
-    margin: 5% auto auto;
+    /* margin: 5% auto auto; */
     color: #2f3542;
     border-radius: 50px;
     width: 300px;
@@ -58,4 +58,17 @@ html, body {
 .move {
     position: absolute;
     bottom: 10rem;
+}
+
+.goMain {
+    color: #3f4040;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.goMain:hover {
+    color: gray;
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import './PostCard.css';
 import cardImage from 'image/loginBackground.jpg';
 
@@ -6,7 +6,7 @@ const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
     return (
         <Fragment>
             <div class="main-Card">
-                <img src={ cardImage } alt="cardImage" />
+                <img src={cardImage} alt="cardImage"/>
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>
@@ -17,7 +17,7 @@ const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
                 </div>
             </div>
             <div class="main-Card">
-                <img src={cardImage} alt="cardImage" />
+                <img src={cardImage} alt="cardImage"/>
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>
@@ -28,7 +28,7 @@ const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
                 </div>
             </div>
             <div class="main-Card">
-                <img src={cardImage} alt="cardImage" />
+                <img src={cardImage} alt="cardImage"/>
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>
