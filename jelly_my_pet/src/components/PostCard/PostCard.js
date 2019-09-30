@@ -5,8 +5,11 @@ import cardImage from 'image/loginBackground.jpg';
 const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
     return (
         <Fragment>
-            <div class="main-Card">
+            <div className="main-Card">
                 <img src={cardImage} alt="cardImage"/>
+            <div className="main-Card">
+                <img src={ cardImage } alt="cardImage" />
+
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>
@@ -16,8 +19,13 @@ const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
                     <span className="post-contents-time">2019.09.19 8시 26분</span>
                 </div>
             </div>
-            <div class="main-Card">
+
+            <div className="main-Card">
                 <img src={cardImage} alt="cardImage"/>
+
+            <div className="main-Card">
+                <img src={cardImage} alt="cardImage" />
+
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>
@@ -27,8 +35,13 @@ const PostCard = ({userName, petInfo, contents, writeTime, postImg}) => {
                     <span className="post-contents-time">2019.09.19 8시 26분</span>
                 </div>
             </div>
-            <div class="main-Card">
+
+            <div className="main-Card">
                 <img src={cardImage} alt="cardImage"/>
+
+            <div className="main-Card">
+                <img src={cardImage} alt="cardImage" />
+
                 <div className="post-contents">
                     <div className="post-contents-header">
                         <span className="post-contetns-title">이재민</span>

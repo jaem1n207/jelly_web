@@ -156,6 +156,9 @@ nav {
     transition: 0.4s;
     cursor: pointer;
 }
+.search-btn placeholder {
+    color: black;   
+}
 
 .search-btn:hover {
     color: white;
