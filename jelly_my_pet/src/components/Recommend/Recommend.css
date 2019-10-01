@@ -1,0 +1,165 @@
+@media(max-height: 1920px) {
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&display=swap&subset=korean');
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    background-color: #FBEFDF;
+}
+
+ul, li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.re-contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url('/src/image/RecommendBackground.jpg');
+    background-size: 100% 100%;
+      
+}
+
+.re-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.re-i_logo > span{transition: all .3s ease-in-out; user-select: none; cursor: pointer; }
+.re-i_logo:hover .re-project-name{opacity: 0;}
+.re-i_logo:hover .re-team-name{opacity: 1;}
+.re-i_logo > .re-project-name{position: absolute;}
+.re-i_logo > .re-team-name{color: #E2A74D;font-weight: bold; font-size: 2rem;}
+.re-i_logo > .re-team-name{opacity: 0}
+
+.re-header {
+    /* background-color: #fff; */
+    background-blend-mode: screen;
+    position: fixed;
+    width: 95%;
+    height: 8%;
+    display:flex;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.re-left-item {
+    -webkit-box-flex: 1;
+    min-width: 40px;
+}
+
+
+.re-rightArea {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.re-right-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.re-right-item li{
+    float: left;
+    margin-right: 30px;
+}
+
+.re-p1 {
+    color: #A56D4D;
+    font-weight: bold;
+    font-size: 1rem;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.re-p1:hover {
+    color: #E2A74D;
+}
+
+.re-project-name {
+    color: #E2A74D;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.re-project-name:hover {
+    content: "Jelly";
+}
+
+.re-search_box {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.re-search-btn {
+    color: #A56D4D;
+    float: right;
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 2%;
+    border: 0.1rem solid #A56D4D;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.re-search-btn:hover {
+    color: white;
+    background-color: #A56D4D;
+}
+
+.re-search-txt {
+    border: 0.1rem solid #A56D4D;
+    background: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    color: black;
+    font-size: 1rem;
+    transition: 0.4s;
+    line-height: 36px;
+    width: 70%;
+    height: 50%;
+    border-radius: 50px;
+}
+
+}

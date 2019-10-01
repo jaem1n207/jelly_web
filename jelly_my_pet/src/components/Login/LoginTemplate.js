@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import './Login.css';
 import axios from 'axios';
 import { SERVER } from 'config/config.json';
+import { FaLock,FaUser } from "react-icons/fa";
 
 const LoginTemplate = () => {
     const [id, setId] = useState('');
@@ -26,13 +27,13 @@ const LoginTemplate = () => {
                 <div className="login-box">
                     <h1>My Pet</h1>
                     <div className="textbox">
-                        <i className="fa fa-user" aria-hidden="true"></i>
+                        <FaUser></FaUser>
                         <label>
                             <input type="text" placeholder="Username" name="id" value={id} onChange={event => { setId(event.target.value) }} />
                         </label>
                     </div>
                     <div className="textbox">
-                        <i className="fa fa-lock" aria-hidden="true"></i>
+                        <FaLock></FaLock>
                         <label>
                             <input type="password" placeholder="Password" name="password" value={password} onChange={event => { setPassword(event.target.value) }} />
                         </label>
