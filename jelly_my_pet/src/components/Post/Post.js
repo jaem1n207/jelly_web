@@ -40,16 +40,18 @@ const Post = () => {
             </div>
             <div>
               {dummy.imagePaths.map((v, i) => {
-                <div key={v} style={{ display: "inline-block" }}>
-                  <img
-                    src={"http://localhost:3000" + v}
-                    style={{ width: "200px" }}
-                    all={v}
-                  />
-                  <div>
-                    <Button>제거</Button>
+                return(
+                  <div key={v} style={{ display: "inline-block" }}>
+                    <img
+                      src={"http://localhost:3000" + v}
+                      style={{ width: "200px" }}
+                      all={v}
+                    />
+                    <div>
+                      <Button>제거</Button>
+                    </div>
                   </div>
-                </div>;
+                );
               })}
             </div>
           </Form>
