@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Form, Input, Button, Card, Icon, Avatar } from "antd";
 import { withRouter } from "react-router-dom";
 
@@ -40,7 +40,7 @@ const Post = () => {
             </div>
             <div>
               {dummy.imagePaths.map((v, i) => {
-                return(
+                return (
                   <div key={v} style={{ display: "inline-block" }}>
                     <img
                       src={"http://localhost:3000" + v}
