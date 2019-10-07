@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffbf8521-1121-4c62-995b-406f9a436de9" name="Default Changelist" comment="" />
+    <list default="true" id="ffbf8521-1121-4c62-995b-406f9a436de9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainPage/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPage/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recommend/Recommend.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recommend/Recommend.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Video/Video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Video/Video.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +50,7 @@
       <updated>1569030784575</updated>
       <workItem from="1569030785837" duration="425000" />
       <workItem from="1569474240123" duration="363000" />
+      <workItem from="1570008999384" duration="15000" />
     </task>
     <servers />
   </component>

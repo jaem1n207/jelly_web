@@ -1,78 +1,73 @@
-@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700&display=swap&subset=korean');
+@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700&display=swap&subset=korean");
 
 * {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 16px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 16px;
 }
 
-html, body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    background: url('../../image/team_background.jpg');
-
-    background: url(../../image/RecommendBackground.jpg) no-repeat;
-
-    background-size: cover;
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .teamIntro-main {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
 
 .box {
-    text-align: center;
-    background: #FFFFF3;
-    padding: 1.2rem;
-    /* margin: 5% auto auto; */
-    color: #2f3542;
-    border-radius: 50px;
-    width: 300px;
-    height: 500px;
+  text-align: center;
+  background: #fffff3;
+  padding: 1.2rem;
+  /* margin: 5% auto auto; */
+  color: #2f3542;
+  border-radius: 50px;
+  width: 300px;
+  height: 500px;
 }
 
 .box-img {
-    border-radius: 50%;
-    width: 16rem;
-    height: 16rem;
+  border-radius: 50%;
+  width: 16rem;
+  height: 16rem;
 }
 .box h1 {
-    font-size: 2.6rem;
-    letter-spacing: 4px;
-    font-weight: 200;
+  font-size: 2.6rem;
+  letter-spacing: 4px;
+  font-weight: 200;
 }
 .box h2 {
-    font-size: 2rem;
-    letter-spacing: 3px;
-    font-weight: 100;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 100;
 }
 .box p {
-    text-align: center;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
 }
 
 .move {
-    position: absolute;
-    bottom: 10rem;
+  position: absolute;
+  bottom: 10rem;
 }
 
 .goMain {
-    color: #3f4040;
-    cursor: pointer;
-    position: absolute;
-    top: 10%;
-    font-size: 2.4rem;
-    font-weight: bold;
+  color: #3f4040;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  font-size: 2.4rem;
+  font-weight: bold;
 }
 
 .goMain:hover {
-    color: gray;
+  color: gray;
 }

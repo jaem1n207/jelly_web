@@ -1,79 +1,68 @@
-@media (max-height: 1920px) {
-  @import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&display=swap&subset=korean");
+@media(max-height: 1920px) {
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&display=swap&subset=korean');
 
-  html {
+html, body {
     margin: 0;
     height: 100%;
-  }
+}
 
-  * {
-    font-family: "Nanum Myeongjo", serif;
-  }
+* {
+    font-family: 'Nanum Myeongjo', serif;
+}
 
-  body {
+body {
     margin: 0;
     height: 100%;
     padding: 0;
-  }
+    background-color: #FBEFDF;
+}
 
-  ul,
-  li {
+ul, li {
     list-style: none;
-  }
+}
 
-  ul {
+ul {
     padding: 0;
-  }
+}
 
-  .re-contents {
+.po-contents {
     width: 100%;
     height: 100%;
     display: flex;
-  }
+    background-image: url('#');
+    background-size: 100% 100%;
+      
+}
 
-  .re-main {
+.po-main {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
-  .re-i_logo > span {
-    transition: all 0.3s ease-in-out;
-    user-select: none;
-    cursor: pointer;
-  }
-  .re-i_logo:hover .re-project-name {
-    opacity: 0;
-  }
-  .re-i_logo:hover .re-team-name {
-    opacity: 1;
-  }
-  .re-i_logo > .re-project-name {
-    position: absolute;
-  }
-  .re-i_logo > .re-team-name {
-    color: #e2a74d;
-    font-weight: bold;
-    font-size: 2rem;
-  }
-  .re-i_logo > .re-team-name {
-    opacity: 0;
-  }
 
-  .re-header {
+
+.po-i_logo > span{transition: all .3s ease-in-out; user-select: none; cursor: pointer; }
+.po-i_logo:hover .po-project-name{opacity: 0;}
+.po-i_logo:hover .po-team-name{opacity: 1;}
+.po-i_logo > .po-project-name{position: absolute;}
+.po-i_logo > .po-team-name{color: #E2A74D;font-weight: bold; font-size: 2rem;}
+.po-i_logo > .po-team-name{opacity: 0}
+
+.po-header {
     /* background-color: #fff; */
     background-blend-mode: screen;
     position: fixed;
     width: 95%;
     height: 8%;
-    display: flex;
+    display:flex;
     border-radius: 1rem;
     margin-top: 0.5rem;
-  }
+}
 
-  nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,84 +71,85 @@
     height: 100%;
     padding-left: 2%;
     padding-right: 2%;
-  }
+}
 
-  .re-left-item {
+.po-left-item {
     -webkit-box-flex: 1;
     min-width: 40px;
-  }
+}
 
-  .re-rightArea {
+
+.po-rightArea {
     width: 40%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .re-right-item {
+.po-right-item {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .re-right-item li {
+.po-right-item li{
     float: left;
     margin-right: 30px;
-  }
+}
 
-  .re-p1 {
-    color: #a56d4d;
+.po-p1 {
+    color: #A56D4D;
     font-weight: bold;
     font-size: 1rem;
     transition-duration: 0.3s;
     cursor: pointer;
     user-select: none;
-  }
+}
 
-  .re-p1:hover {
-    color: #e2a74d;
-  }
+.po-p1:hover {
+    color: #E2A74D;
+}
 
-  .re-project-name {
-    color: #e2a74d;
+.po-project-name {
+    color: #E2A74D;
     font-weight: bold;
     font-size: 2rem;
-  }
+}
 
-  .re-project-name:hover {
+.po-project-name:hover {
     content: "Jelly";
-  }
+}
 
-  .re-search_box {
+.po-search_box {
     width: 50%;
     height: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .re-search-btn {
-    color: #a56d4d;
+.po-search-btn {
+    color: #A56D4D;
     float: right;
     width: 1.8rem;
     height: 1.8rem;
     padding: 2%;
-    border: 0.1rem solid #a56d4d;
+    border: 0.1rem solid #A56D4D;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-  }
+}
 
-  .re-search-btn:hover {
+.po-search-btn:hover {
     color: white;
-    background-color: #a56d4d;
-  }
+    background-color: #A56D4D;
+}
 
-  .re-search-txt {
-    border: 0.1rem solid #a56d4d;
+.po-search-txt {
+    border: 0.1rem solid #A56D4D;
     background: none;
     outline: none;
     padding: 0.5rem 1rem;
@@ -170,5 +160,6 @@
     width: 70%;
     height: 50%;
     border-radius: 50px;
-  }
+}
+
 }

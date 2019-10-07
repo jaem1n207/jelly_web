@@ -1,8 +1,6 @@
-import React from 'react';
-import TeamIntroComponent from 'components/TeamIntroComponent/Team';
+import React from "react";
+import TeamIntroComponent from "components/TeamIntroComponent/Team";
 
-const TeamIntro = () => (
-    <TeamIntroComponent />
-);
+const TeamIntro = () => <TeamIntroComponent />;
 
 export default TeamIntro;
