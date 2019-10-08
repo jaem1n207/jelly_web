@@ -1,0 +1,35 @@
+.pi-Picturelist {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 70vh;
+    margin-top: 8%;
+}
+.main-picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px 3px gray;
+    margin-bottom: 4%;
+}
+.picture-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.pi-main {
+    height: 100vh;
+}
+
+.pi-p1 {
+    font-size: 2rem;
+    margin-top: 16%;
+    padding-left: 300px;
+}

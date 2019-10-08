@@ -3,7 +3,11 @@
 .po-cards {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
+}
+
+.po-pictures {
+    display: flex;
+    flex-direction: column;
 }
 
 .po-main{
@@ -13,5 +17,17 @@
 
 .po-Lcontent {
     width: 50%;
-    height: 50%;
+    margin-right: 2%;
+}
+
+.po-Rcontent {
+    width: 50%;
+    margin-left: 2%;
+}
+
+.po-contents {
+    display: flex;
+    align-content: center;
+    margin-left: 4%;
+    margin-right: 4%;
 }

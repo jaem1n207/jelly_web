@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Form, Input, Button, Card, Icon, Avatar } from "antd";
 import { withRouter } from "react-router-dom";
 
-const dummy = {
+const dummyPost = {
   isLoggedIn: true,
   imagePaths: [],
   mainPosts: [
@@ -21,7 +21,7 @@ const Post = () => {
   return (
     <Card>
       <div>
-        {dummy.isLoggedIn && (
+        {dummyPost.isLoggedIn && (
           <Form style={{ marginBottom: "20px" }} encType="multipart/form-data">
             <Input.TextArea
               maxLength={140}
@@ -39,7 +39,7 @@ const Post = () => {
               </Button>
             </div>
             <div>
-              {dummy.imagePaths.map((v, i) => {
+              {dummyPost.imagePaths.map((v, i) => {
                 return(
                   <div key={v} style={{ display: "inline-block" }}>
                     <img
@@ -56,7 +56,7 @@ const Post = () => {
             </div>
           </Form>
         )}
-        {dummy.mainPosts.map(c => {
+        {dummyPost.mainPosts.map(c => {
           return (
             <Card
               key={+c.createdAt}

@@ -2,7 +2,8 @@ import React from 'react';
 import './Popular.css';
 import Navigator from '../Navigator/Navigator';
 import Po_PostCard from '../Poular_PostCard/Po_PostCard';
-// import Po_Picture from '../Poular_Picture/Po_Picture';
+import Picture from '../Poular_Picture/Po_Picture';
+
 const Popular = () => {
     return (
       <>
@@ -17,7 +18,9 @@ const Popular = () => {
               </div>
             </div>
             <div className="po-Rcontent">
-              {/* <Po_Picture /> */}
+              <div className="po-pictures">
+                <Picture />
+              </div>
             </div>
           </div>
         </div>
