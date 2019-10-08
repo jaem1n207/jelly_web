@@ -39,7 +39,7 @@ const Post = () => {
               </Button>
             </div>
             <div>
-              {dummy.imagePaths.map((v, i) => {
+              {dummyPost.imagePaths.map((v, i) => {
                 return (
                   <div key={v} style={{ display: "inline-block" }}>
                     <img
