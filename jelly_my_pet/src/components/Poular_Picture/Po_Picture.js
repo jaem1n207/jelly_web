@@ -15,7 +15,13 @@ const Picture = () => {
         <div className="pi-p1">
           오늘의 인기사진
         </div>
-        <div className="pi-Picturelist">
+        <div className="pi-Picturelist" id="pi-Pic">
+          <div className="main-picture" onclick="">
+            <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
+            <span className="picture-nickname">
+              {dummyImage.User.nickname}
+            </span>
+          </div>
           <div className="main-picture">
             <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
             <span className="picture-nickname">
@@ -23,12 +29,22 @@ const Picture = () => {
             </span>
           </div>
           <div className="main-picture">
-
             <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
-
-            <div className="picture-nickname">
+            <span className="picture-nickname">
               {dummyImage.User.nickname}
-            </div>
+            </span>
+          </div>
+          <div className="main-picture">
+            <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
+            <span className="picture-nickname">
+              {dummyImage.User.nickname}
+            </span>
+          </div>
+          <div className="main-picture">
+            <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
+            <span className="picture-nickname">
+              {dummyImage.User.nickname}
+            </span>
           </div>
           <div className="main-picture">
             <img className="picture-img" src={dummyImage.url} alt="poularPicture" />
