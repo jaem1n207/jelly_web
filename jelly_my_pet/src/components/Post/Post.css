@@ -1,0 +1,13 @@
+.Po-MainPost {
+  position: relative;
+  margin: 0 auto;
+  top: 60px;
+  display: flex;
+}
+.Po-Post {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.Po-PostTop {
+}

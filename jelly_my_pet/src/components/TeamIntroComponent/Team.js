@@ -26,19 +26,19 @@ const Team = ({ history }) => {
           <img src={member_img} alt="멤버 이미지" className="box-img" />
           <h1>최주영</h1>
           <h2>디자인기획</h2>
-          <p>페이지의 전반적인 디자인을 기획하였다.</p>
+          <p>페이지의 전반적인 디자인 기획</p>
         </div>
         <div className="box">
           <img src={member_img} alt="멤버 이미지" className="box-img" />
           <h1>진정호</h1>
           <h2>웹</h2>
-          <p>추천 및 동영상 페이지, 검색 기능</p>
+          <p>인기 글/사진 페이지</p>
         </div>
         <div className="box">
           <img src={member_img} alt="멤버 이미지" className="box-img" />
           <h1>황대성</h1>
-          <h2>?</h2>
-          <p>?</p>
+          <h2>웹</h2>
+          <p>추천 글 및 영상 페이지</p>
         </div>
         <div
           className="goMain"
