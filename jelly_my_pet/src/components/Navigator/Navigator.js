@@ -13,7 +13,12 @@ const Navigator = ({ history }) => {
       <div className="header">
         <nav>
           <div className="left-item">
-            <div className="i_logo" onClick={() => {movePage("/");}}>
+            <div
+              className="i_logo"
+              onClick={() => {
+                movePage("/");
+              }}
+            >
               <img src={logo} alt="로고" height="30px;" width="30px;" />
               <span className="project-name">My Pet</span>
               <span className="team-name">Jelly</span>
@@ -55,7 +60,6 @@ const Navigator = ({ history }) => {
                 >
                   팀원소개
                 </li>
-
                 <li
                   className="p1"
                   onClick={() => {
@@ -64,7 +68,6 @@ const Navigator = ({ history }) => {
                 >
                   인기 글/사진
                 </li>
-
               </ul>
             </div>
           </div>
