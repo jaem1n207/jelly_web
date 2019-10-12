@@ -12,7 +12,7 @@
 
 .box {
   text-align: center;
-  background: #edf2ff;
+  background-color: none;
   padding: 1.2rem;
   color: #2f3542;
   border-radius: 50px;
@@ -26,19 +26,24 @@
   height: 16rem;
 }
 .box h1 {
+  color: #495057;
   font-size: 2.6rem;
   letter-spacing: 4px;
-  font-weight: 200;
+  font-weight: bold;
+  margin-bottom: 3rem;
 }
 .box h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 3px;
-  font-weight: 100;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 .box p {
+  color: #343a40;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .move {
@@ -47,7 +52,7 @@
 }
 
 .goMain {
-  color: #3f4040;
+  color: #c89ec4;
   cursor: pointer;
   position: absolute;
   bottom: -32%;
@@ -56,5 +61,14 @@
 }
 
 .goMain:hover {
-  color: gray;
+  color: #a593e0;
+}
+.T-Back {
+  color: #84b1ed;
+}
+.T-Front {
+  color: #67d5b5;
+}
+.T-Design {
+  color: #ee7785;
 }

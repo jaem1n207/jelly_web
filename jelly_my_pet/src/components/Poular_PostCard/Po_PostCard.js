@@ -1,7 +1,7 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Po_PostCard.css";
 import { FaRegHeart, FaRegComment } from "react-icons/fa";
-import post_img from "image/loginBackground.jpg";
+import post_img from "image/Po-Hedgehog.jpg";
 import cx from "classnames";
 
 const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
@@ -20,9 +20,7 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
 
   return (
     <div className="PPo-Main">
-      <div className="PPo-p1">
-          오늘의 인기글
-      </div>
+      <div className="PPo-p1">오늘의 인기글</div>
       <div className="PPo_MainPost">
         <div className="PPo-Post">
           <div className="PPo-PostTop">
@@ -38,12 +36,12 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
           </div>
           <div className="PPo-PostMessage">
             <p className="PPo-Posts">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
           <div className="PPo-PostBottom">
@@ -64,7 +62,7 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <div className="PPo-HeartDiv">
                 <div className="PPo-HeartDiv2">
                   <button type="button" className="PPo-HeartViewBtn">
-                      좋아요 <span>10,000</span>개
+                    좋아요 <span>10,000</span>개
                   </button>
                 </div>
               </div>
@@ -82,13 +80,13 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
                   />
                   <button
                     className={cx(
-                        { "PPo-SubmitBtnStyle-disabled": isInputCheck },
-                        { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
-                      )}
+                      { "PPo-SubmitBtnStyle-disabled": isInputCheck },
+                      { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
+                    )}
                     disabled
                     type="submit"
                   >
-                      게시
+                    게시
                   </button>
                 </form>
               </div>
@@ -109,12 +107,12 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
           </div>
           <div className="PPo-PostMessage">
             <p className="PPo-Posts">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
           <div className="PPo-PostBottom">
@@ -135,7 +133,7 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <div className="PPo-HeartDiv">
                 <div className="PPo-HeartDiv2">
                   <button type="button" className="PPo-HeartViewBtn">
-                      좋아요 <span>10,000</span>개
+                    좋아요 <span>10,000</span>개
                   </button>
                 </div>
               </div>
@@ -153,13 +151,13 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
                   />
                   <button
                     className={cx(
-                        { "PPo-SubmitBtnStyle-disabled": isInputCheck },
-                        { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
-                      )}
+                      { "PPo-SubmitBtnStyle-disabled": isInputCheck },
+                      { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
+                    )}
                     disabled
                     type="submit"
                   >
-                      게시
+                    게시
                   </button>
                 </form>
               </div>
@@ -180,12 +178,12 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
           </div>
           <div className="PPo-PostMessage">
             <p className="PPo-Posts">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
           <div className="PPo-PostBottom">
@@ -206,7 +204,7 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <div className="PPo-HeartDiv">
                 <div className="PPo-HeartDiv2">
                   <button type="button" className="PPo-HeartViewBtn">
-                      좋아요 <span>10,000</span>개
+                    좋아요 <span>10,000</span>개
                   </button>
                 </div>
               </div>
@@ -224,13 +222,13 @@ const Po_PostCard = ({ userName, petInfo, contents, writeTime, postImg }) => {
                   />
                   <button
                     className={cx(
-                        { "PPo-SubmitBtnStyle-disabled": isInputCheck },
-                        { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
-                      )}
+                      { "PPo-SubmitBtnStyle-disabled": isInputCheck },
+                      { "PPo-SubmitBtnStyle-enabled": !isInputCheck }
+                    )}
                     disabled
                     type="submit"
                   >
-                      게시
+                    게시
                   </button>
                 </form>
               </div>
