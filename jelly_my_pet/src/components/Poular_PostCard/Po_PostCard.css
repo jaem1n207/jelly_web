@@ -1,71 +1,232 @@
-.Po_Cardlist {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  height: 70vh;
-  margin-top: 8%;
-}
-.Po-Main {
+.PPo-Main {
   height: 100vh;
 }
-.Po_main-Card {
-  background-color: white;
+.PPo_MainPost {
+  height: 90vh;
   width: 100%;
-  border-radius: 1rem;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  overflow-y: auto;
+  flex-direction: column; 
+}
+.PPo-Post {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ffffff;
   align-items: center;
-  flex-direction: column;
-  box-shadow: 3px 3px 3px 3px gray;
-  margin-bottom: 4%;
+  justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+}
+.PPo-PostTop {
+  padding-left: 16px;
+  padding-right: 16px;
+  float: top;
+}
+.PPo-PostUserName {
+  font-weight: bold;
+}
+.PPo-PostMessage {
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+.PPo-Posts {
+  margin-bottom: 0.3rem;
+}
+.PPo-PostImg {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.PPo-PostImgSize {
+  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
+}
+.PPo-PostBottom {
+  padding: 0;
+  width: 100%;
+}
+.PPo-PostFunction {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.PPo-PostFunctionPosition {
+  display: inline-block;
+  margin-right: 8px;
+  width: 6%;
+}
+.PPo-Btn {
+  border: none;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  min-width: 40px;
+  min-height: 40px;
+  align-items: center;
+  background: 0 0;
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-flex: 0;
+  justify-content: center;
+  padding: 0;
+}
+.PPo-CommentBtn {
+  float: left;
+}
+.PPo-PetName {
+  cursor: pointer;
+  font: inherit;
+  vertical-align: baseline;
+  min-width: 180px;
+  min-height: 18px;
+  margin-left: 57%;
+}
+.PPo-HeartCnt {
+  padding-right: 16px;
+  padding-left: 16px;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.PPo-HeartDiv {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+}
+.PPo-HeartDiv2 {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  justify-content: start;
+  white-space: pre;
+}
+.PPo-HeartViewBtn {
+  color: rgba(var(--f07, 38, 38, 38), 1);
+  border: 0;
+  display: inline;
+  padding: 0;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+.PPo-WriteComment {
+  padding-right: 16px;
+  padding-left: 16px;
+  border-top: 1px solid lightgray;
+  margin-top: 0.8rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+.PPo-WriteCommentDiv {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  display: flex;
+  -webkit-box-direction: normal;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.PPo-WriteCommentForm {
+  flex-direction: row;
+  flex-shrink: 1;
+  position: relative;
+  width: 100%;
+}
+.PPo-WriteCommentArea {
+  background: 0 0;
+  border: 0;
+  font-size: inherit;
+  color: #262626;
+  height: 18px;
+  max-height: 80px;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  width: 95%;
+}
+.PPo-SubmitPostBtn[disabled]:not(.classname) {
+  opacity: 0.3;
+}
+.PPo-SubmitPostBtn[disabled] {
+  pointer-events: none;
+}
+.PPo-SubmitBtnStyle-disabled {
+  border: 0;
+  padding: 0;
+  color: #dee2e6;
+  float: right;
+  width: 5%;
+  -webkit-appearance: none;
+  background: 0 0;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.PPo-SubmitBtnStyle-enabled {
+  border: 0;
+  color: #3897f0;
+  padding: 0;
+  float: right;
+  width: 5%;
+  -webkit-appearance: none;
+  background: 0 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.PPo-SubmitPostBtn {
+  -webkit-appearance: none;
+  background: 0 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  width: auto;
+}
+.PPo-WriteCommentArea .PPo-WriteCommentForm {
+  flex-grow: 1;
 }
 
-.Po-p1 {
+.PPo-p1 {
   font-size: 2rem;
   margin-top: 16%;
   margin-left: 38.5%;
-}
-
-.Po_main-Card img {
-  width: 100%;
-  height: 60%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-.Po_post-contents {
-  width: 80%;
-  height: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  margin: 2% auto;
-}
-
-.Po_post-contents-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Po_post-contetns-title {
-  font-weight: bold;
-}
-
-.Po_post-contents-petInfo {
-  color: #a56d4d;
-}
-
-.Po_post-contents-main {
-  width: 100%;
-  height: auto;
-  text-align: center;
-  padding-bottom: 2%;
-  border-bottom: 0.2rem solid #fbefdf;
-}
-
-.Po_post-contents-time {
-  align-self: flex-end;
-  color: #346b91;
 }
