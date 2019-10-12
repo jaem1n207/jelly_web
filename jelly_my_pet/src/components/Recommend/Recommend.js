@@ -2,7 +2,9 @@ import React from "react";
 import Navigator from "../Navigator/Navigator";
 import "./Recommend.css";
 import { withRouter } from "react-router-dom";
-// import Youtube from './YoutubeApi/Youtube';
+import Youtube from './YoutubeApi/Youtube';
+import Snack from './Snack/Snack';
+
 const Recommend = () => {
   return (
     <>
@@ -14,10 +16,9 @@ const Recommend = () => {
           <div className="re-topcontent">
             <div className="re-toptxt">
               추천 간식
-              
             </div>
             <div className="re-snack">
-              
+              <Snack /> 
             </div>
           </div>
           <div className="re-botcontent">
@@ -25,7 +26,7 @@ const Recommend = () => {
               추천 유튜브
             </div>
             <div className="re-youtube">
-              {/* <Youtube /> */}
+              <Youtube />
             </div>
           </div>
         </div>

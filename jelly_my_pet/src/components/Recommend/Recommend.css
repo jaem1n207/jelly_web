@@ -1,0 +1,17 @@
+.re-contents {
+    display: flex;
+    flex-direction: column;
+}
+
+.re-topcontent {
+    margin-top: 8%;
+}
+
+.re-botcontent {
+    margin-top: 2%;
+}
+
+.re-toptxt, .re-bottxt {
+    font-size: 2rem;
+    margin-left: 5%;
+}
