@@ -1,7 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Post.css";
 import { FaRegHeart, FaRegComment } from "react-icons/fa";
-import post_img from "image/loginBackground.jpg";
+import post_img1 from "image/Po-Cat.jpg";
+import post_img2 from "image/Po-Hedgehog.jpg";
 import { withRouter } from "react-router-dom";
 import cx from "classnames";
 
@@ -32,7 +33,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               </div>
             </div>
             <div className="Po-PostImg">
-              <img className="Po-PostImgSize" src={post_img} />
+              <img className="Po-PostImgSize" src={post_img1} />
             </div>
             <div className="Po-PostMessage">
               <p className="Po-Posts">
@@ -103,7 +104,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               </div>
             </div>
             <div className="Po-PostImg">
-              <img className="Po-PostImgSize" src={post_img} />
+              <img className="Po-PostImgSize" src={post_img2} />
             </div>
             <div className="Po-PostMessage">
               <p className="Po-Posts">
