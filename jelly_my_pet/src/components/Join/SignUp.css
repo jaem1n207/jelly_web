@@ -1,0 +1,36 @@
+.Sign-BtnPos {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.Sign-Btn {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #a56d4d;
+  color: #a56d4d;
+  padding: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 12px 0;
+  font-weight: bolder;
+  transition-duration: 0.3s;
+  outline: none;
+}
+
+.Sign-Btn:hover {
+  color: white;
+  background-color: #a56d4d;
+}
+
+.Sign-logBtn {
+  font-size: 1rem;
+  font-weight: normal;
+  width: 20%;
+  border: none;
+  margin-left: 80%;
+}
+
+input::placeholder {
+  opacity: 0.5;
+}

@@ -6,6 +6,8 @@ import MainPage from "pages/Main";
 import TeamIntro from "pages/TeamIntro";
 import Popular from "pages/popular";
 import recommend from "pages/Recommend";
+import SignUp from "pages/SignUp";
+
 function App() {
   return (
     <>
@@ -16,6 +18,7 @@ function App() {
           <Route exact path="/" render={MainPage} />
           <Route path="/teamintro" render={TeamIntro} />
           <Route path="/popular" render={Popular} />
+          <Route path="/signup" render={SignUp} />
         </Switch>
       </div>
     </>

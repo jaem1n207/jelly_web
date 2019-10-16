@@ -57,19 +57,19 @@ body {
 }
 
 .textbox input {
-  width: 50%;
+  line-height: 2rem;
   border: none;
   outline: none;
   background: none;
   color: #2f3542;
   font-size: 18px;
-  width: 80%;
+  width: 120%;
   float: left;
   margin: 0 10px;
 }
 
-.btn {
-  width: 50%;
+.Lo-Btn {
+  width: 49%;
   background: transparent;
   border: 2px solid #a56d4d;
   color: #a56d4d;
@@ -81,8 +81,13 @@ body {
   transition-duration: 0.3s;
   outline: none;
 }
-
-.btn:hover {
+.Lo-Btn:hover:hover {
   color: white;
   background-color: #a56d4d;
+}
+
+.Lo-BtnPos {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
 }

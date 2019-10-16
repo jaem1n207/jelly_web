@@ -1,24 +1,27 @@
-import React, { Fragment, useState } from "react";
-import "./Login.css";
+import React, { useState } from "react";
+import "./SignUp.css";
 import axios from "axios";
 import { SERVER } from "config/config.json";
-import { FaLock, FaUser } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
 
-const LoginTemplate = ({ history }) => {
+const SignUp = ({ history }) => {
   const movePage = url => {
     history.push(url);
   };
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [petname, setPetname] = useState("");
   const handleLogin = event => {
     const data = {
       id: id,
-      pw: password
+      pw: password,
+      username: username,
+      petname: petname
     };
     event.preventDefault();
     axios
-      .post(`${SERVER}/auth/login`, data)
+      .post(`${SERVER}/auth/SignUp`, data)
       .then(response => {
         console.log(response);
       })
@@ -27,17 +30,31 @@ const LoginTemplate = ({ history }) => {
       });
   };
   return (
-    <Fragment>
+    <div>
       <div className="login-main">
         <div className="login-box">
-          <h1>My Pet</h1>
+          <h1>회원가입</h1>
           <div className="textbox">
-            <FaUser></FaUser>
             <label>
+              이름
+              <input
+                type="text"
+                placeholder="USERNAME"
+                id=""
+                value={username}
+                onChange={event => {
+                  setUsername(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="textbox">
+            <label>
+              아이디
               <input
                 type="text"
                 placeholder="ID"
-                name="id"
+                name=""
                 value={id}
                 onChange={event => {
                   setId(event.target.value);
@@ -46,12 +63,12 @@ const LoginTemplate = ({ history }) => {
             </label>
           </div>
           <div className="textbox">
-            <FaLock></FaLock>
             <label>
+              비밀번호
               <input
                 type="password"
                 placeholder="PASSWORD"
-                name="password"
+                name=""
                 value={password}
                 onChange={event => {
                   setPassword(event.target.value);
@@ -59,28 +76,42 @@ const LoginTemplate = ({ history }) => {
               />
             </label>
           </div>
-          <div className="Lo-BtnPos">
+          <div className="textbox">
+            <label>
+              펫 이름
+              <input
+                type="text"
+                placeholder="PetName"
+                name=""
+                value={petname}
+                onChange={event => {
+                  setPetname(event.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="Sign-BtnPos">
             <input
-              className="Lo-Btn"
+              className="Sign-Btn"
               type="button"
               name=""
-              value="로그인"
+              value="회원가입"
               onClick={handleLogin}
             />
             <input
-              className="Lo-Btn"
+              className="Sign-Btn Sign-logBtn"
               type="button"
               name=""
+              value="로그인"
               onClick={() => {
-                movePage("/signup");
+                movePage("/login");
               }}
-              value="회원가입"
             />
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
-export default withRouter(LoginTemplate);
+export default withRouter(SignUp);
