@@ -19,6 +19,9 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
       setIsInputCheck(true);
     }
   }, [setIsInputCheck, comment]);
+
+  const [count, setCount] = useState(0);
+
   return (
     <Fragment>
       <div className="Po-Main">
@@ -48,7 +51,10 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
             <div className="Po-PostBottom">
               <section className="Po-PostFunction">
                 <span className="Po-PostFunctionPosition">
-                  <button className="Po-HeartBtn Po-Btn">
+                  <button
+                    className="Po-HeartBtn Po-Btn"
+                    onClick={() => setCount(count + 1)}
+                  >
                     <FaRegHeart size={24}></FaRegHeart>
                   </button>
                 </span>
@@ -62,8 +68,8 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <section className="Po-HeartCnt">
                 <div className="Po-HeartDiv">
                   <div className="Po-HeartDiv2">
-                    <button type="button" className="Po-HeartViewBtn">
-                      좋아요 <span>10,000</span>개
+                    <button className="Po-HeartViewBtn">
+                      좋아요 <span>{count}</span>개
                     </button>
                   </div>
                 </div>

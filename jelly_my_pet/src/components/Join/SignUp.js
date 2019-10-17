@@ -40,7 +40,7 @@ const SignUp = ({ history }) => {
               <input
                 type="text"
                 placeholder="USERNAME"
-                id=""
+                id="username"
                 value={username}
                 onChange={event => {
                   setUsername(event.target.value);
@@ -54,7 +54,7 @@ const SignUp = ({ history }) => {
               <input
                 type="text"
                 placeholder="ID"
-                name=""
+                name="id"
                 value={id}
                 onChange={event => {
                   setId(event.target.value);
@@ -68,7 +68,7 @@ const SignUp = ({ history }) => {
               <input
                 type="password"
                 placeholder="PASSWORD"
-                name=""
+                name="password"
                 value={password}
                 onChange={event => {
                   setPassword(event.target.value);
@@ -82,7 +82,7 @@ const SignUp = ({ history }) => {
               <input
                 type="text"
                 placeholder="PetName"
-                name=""
+                name="petname"
                 value={petname}
                 onChange={event => {
                   setPetname(event.target.value);
