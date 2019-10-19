@@ -72,6 +72,9 @@ section {
   margin-right: 8px;
   width: 6%;
 }
+.Po-HeartBtn:active {
+  color: red;
+}
 .Po-Btn {
   border: none;
   background-color: #ffffff;
@@ -179,12 +182,7 @@ section {
   resize: none;
   width: 95%;
 }
-.Po-SubmitPostBtn[disabled]:not(.classname) {
-  opacity: 0.3;
-}
-.Po-SubmitPostBtn[disabled] {
-  pointer-events: none;
-}
+
 .Po-SubmitBtnStyle-disabled {
   border: 0;
   padding: 0;
@@ -218,18 +216,130 @@ section {
   font-weight: bold;
   font-size: 0.9rem;
 }
-.Po-SubmitPostBtn {
-  -webkit-appearance: none;
+.Po-SubmitBtnStyle[disabled]:not(.classname) {
+  opacity: 0.5;
+}
+.Po-SubmitBtnStyle[disabled] {
+  pointer-events: none;
+}
+
+.Po-WriteBtnStyle-disabled {
+  border: 0;
+  padding: 0;
+  color: #dee2e6;
   background: 0 0;
-  box-sizing: border-box;
+
+  text-align: center;
+  text-transform: inherit;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.Po-WriteBtnStyle-enabled {
+  border: 0;
+  color: #3897f0;
+  padding: 0;
+  -webkit-appearance: none;
+  background: 0;
   cursor: pointer;
-  font-weight: 600;
   text-align: center;
   text-transform: inherit;
   text-overflow: ellipsis;
   -webkit-user-select: none;
-  width: auto;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
+.Po-WriteBtnStyle[disabled]:not(.classname) {
+  opacity: 0.3;
+}
+.Po-WriteBtnStyle[disabled] {
+  pointer-events: none;
+}
+
 .Po-WriteCommentArea .Po-WriteCommentForm {
   flex-grow: 1;
+}
+
+.Po-Writing {
+  text-align: center;
+  border: 1px solid #dee2e6;
+  margin: 0 auto;
+  width: 32%;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+.Po-WritingInfo {
+  cursor: pointer;
+  padding: 10px 0;
+  padding-left: 0.4rem;
+  border-bottom: 1px solid #dee2e6;
+  text-align: left;
+  background-color: #f5f6f7;
+}
+.Po-TextArea {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.5rem 0;
+}
+.Po-WritePostArea {
+  outline: 0;
+  border: none;
+  max-height: 80px;
+  min-height: 50px;
+  resize: none;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 18px;
+  width: 97%;
+}
+.Po-WritingAdd {
+  overflow: hidden;
+  margin: 0 1rem;
+}
+.Po-ulAdd {
+  line-height: 1.4rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.Po-liAdd {
+  display: inline-block;
+  margin: 0 auto;
+  font-weight: bold;
+}
+.Po-FileBtn {
+  cursor: pointer;
+}
+.h3 {
+  width: 30%;
+  cursor: pointer;
+  background-color: #f1f3f5;
+  border-radius: 10px;
+  height: 30px;
+}
+.h3:hover {
+  background-color: #e9ecef;
+}
+.h7 {
+  margin-left: 0.7rem;
+  width: 68%;
+  cursor: pointer;
+  background-color: #f1f3f5;
+  border-radius: 10px;
+  position: relative;
+  bottom: 3px;
+  height: 30px;
+}
+.Po-FileText {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 1rem;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  line-height: normal;
+}
+.FileBtnImg {
+  position: relative;
+  top: 4px;
+  color: #868e96;
 }

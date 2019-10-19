@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Post.css";
-import { FaRegHeart, FaRegComment } from "react-icons/fa";
+import { FaRegHeart, FaRegComment, FaImage } from "react-icons/fa";
 import post_img1 from "image/Po-Cat.jpg";
 import post_img2 from "image/Po-Hedgehog.jpg";
 import { withRouter } from "react-router-dom";
@@ -8,10 +8,17 @@ import cx from "classnames";
 
 const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
   const [comment, setComment] = useState("");
+  const [WritePost, setWritePost] = useState("");
   const [isInputCheck, setIsInputCheck] = useState(true);
+
   const onChangeComment = event => {
     setComment(event.target.value);
   };
+
+  const onChangeWritePost = event => {
+    setWritePost(event.target.value);
+  };
+
   useEffect(() => {
     if (comment.length > 0) {
       setIsInputCheck(false);
@@ -20,12 +27,63 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
     }
   }, [setIsInputCheck, comment]);
 
+  useEffect(() => {
+    if (WritePost.length > 0) {
+      setIsInputCheck(false);
+    } else {
+      setIsInputCheck(true);
+    }
+  }, [setIsInputCheck, WritePost]);
+
   const [count, setCount] = useState(0);
+
+  function getFocus() {
+    document.getElementById("comment").focus();
+  }
 
   return (
     <Fragment>
       <div className="Po-Main">
         <div className="Po-MainPost">
+          <div className="Po-Writing">
+            <div className="Po-WritingInfo">
+              <span>게시물 만들기</span>
+            </div>
+            <div className="Po-TextArea">
+              <textarea
+                id="writePost"
+                className="Po-WritePostArea"
+                placeholder="무슨 생각을 하고 계신가요?"
+                autoComplete="off"
+                autoCorrect="off"
+                value={WritePost}
+                onChange={onChangeWritePost}
+              ></textarea>
+            </div>
+            <div className="Po-WritingAdd">
+              <ul className="Po-ulAdd">
+                <li className="Po-liAdd h3">
+                  <label for="Po-file" className="Po-FileBtn">
+                    <FaImage className="FileBtnImg" size={20} />
+                    <span className="Po-FileText">사진/동영상</span>
+                  </label>
+                  <input type="file" id="Po-file"></input>
+                </li>
+                <li className="Po-liAdd h7">
+                  <button
+                    className={cx(
+                      { "Po-WriteBtnStyle-disabled": isInputCheck },
+                      { "Po-WriteBtnStyle-enabled": !isInputCheck }
+                    )}
+                    disabled
+                    type="submit"
+                  >
+                    게시하기
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className="Po-Post">
             <div className="Po-PostTop">
               <div className="Po-PostUserName">
@@ -39,14 +97,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <img className="Po-PostImgSize" src={post_img1} />
             </div>
             <div className="Po-PostMessage">
-              <p className="Po-Posts">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
+              <p className="Po-Posts">누워있는 냥이 사진</p>
             </div>
             <div className="Po-PostBottom">
               <section className="Po-PostFunction">
@@ -59,7 +110,10 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
                   </button>
                 </span>
                 <span className="Po-PostFunctionPosition">
-                  <button className="Po-CommentBtn Po-Btn">
+                  <button
+                    className="Po-CommentBtn Po-Btn"
+                    onClick={() => getFocus()}
+                  >
                     <FaRegComment size={24}></FaRegComment>
                   </button>
                 </span>
@@ -78,6 +132,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
                 <div className="Po-WriteCommentDiv">
                   <form className="Po-WriteCommentForm" method="POST">
                     <textarea
+                      id="comment"
                       className="Po-WriteCommentArea"
                       placeholder="댓글 달기..."
                       autoComplete="off"
@@ -105,7 +160,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <div className="Po-PostUserName">
                 <p>이재민</p>
                 <div className="Po-PostTime">
-                  <p>2019-10-08 18:09:05초</p>
+                  <p>2019-10-09 18:07:07초</p>
                 </div>
               </div>
             </div>
@@ -125,12 +180,18 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
             <div className="Po-PostBottom">
               <section className="Po-PostFunction">
                 <span className="Po-PostFunctionPosition">
-                  <button className="Po-HeartBtn Po-Btn">
+                  <button
+                    className="Po-HeartBtn Po-Btn"
+                    onClick={() => setCount(count + 1)}
+                  >
                     <FaRegHeart size={24}></FaRegHeart>
                   </button>
                 </span>
                 <span className="Po-PostFunctionPosition">
-                  <button className="Po-CommentBtn Po-Btn">
+                  <button
+                    className="Po-CommentBtn Po-Btn"
+                    onClick={() => getFocus()}
+                  >
                     <FaRegComment size={24}></FaRegComment>
                   </button>
                 </span>
@@ -139,8 +200,8 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
               <section className="Po-HeartCnt">
                 <div className="Po-HeartDiv">
                   <div className="Po-HeartDiv2">
-                    <button type="button" className="Po-HeartViewBtn">
-                      좋아요 <span>10,000</span>개
+                    <button className="Po-HeartViewBtn">
+                      좋아요 <span>{count}</span>개
                     </button>
                   </div>
                 </div>
@@ -149,6 +210,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
                 <div className="Po-WriteCommentDiv">
                   <form className="Po-WriteCommentForm" method="POST">
                     <textarea
+                      id="comment"
                       className="Po-WriteCommentArea"
                       placeholder="댓글 달기..."
                       autoComplete="off"
