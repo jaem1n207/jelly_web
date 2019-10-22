@@ -13,44 +13,30 @@ const LoginTemplate = ({ history }) => {
 
   let showMessage = (id, pw) => {
     // 아이디 검사
+    let checkId = new RegExp("^[a-zA-Z][a-zA-Z0-9]{3,11}$", "g"); //정규표현식 (영어와 숫자 조합만 가능)
+    let match = checkId.exec(id);
+
     if (id == "") {
       alert("ID를 입력해주세요.");
-      return;
-    } else if (!isNaN(id)) {
-      alert("아이디는 숫자로 시작할 수 없습니다!");
-      return;
+      return true;
     } else if (id.length > 12 || id.length < 4) {
       alert("ID를 4~12자 이내로 입력해주세요.");
-      return;
+      return true;
+    } else if (match == null) {
+      alert("ID의 첫글자는 영문으로 시작하며 영문과 숫자 조합만 가능합니다.");
+      return true;
     }
-
-    let checkNumber = id.search(/[0-9]/g);
-    let checkEnglish = id.search(/[a-z]/gi);
-    if (checkNumber < 0 || checkEnglish < 0) {
-      alert("아이디는 숫자와 영어를 혼용하여 주세요.");
-      return false;
-    }
-
-    // for (let i = 0; i < id.length; i++) {
-    //   let ch = id;
-    //   if (
-    //     (ch < "a" || ch > "z") &&
-    //     (ch < "A" || ch > "Z") &&
-    //     (ch < "0" || ch > "9")
-    //   ) {
-    //     alert("아이디는 영문과 숫자로만 입력 가능 합니다!");
-    //     return;
-    //   }
-    // }
 
     // 패스워드 검사
     if (pw == "") {
       alert("비밀번호를 입력해주세요.");
-      return;
+      return true;
     } else if (pw.length > 12 || pw.length < 4) {
       alert("비밀번호를 4~12자 이내로 입력해주세요.");
-      return;
+      return true;
     }
+
+    return false;
   };
 
   const [id, setId] = useState("");
