@@ -66,7 +66,11 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
                 <span>이름: {userName}이재민</span>
               </div>
               <ul className="Po-Ul">
-                <li>
+                <li
+                  onClick={() => {
+                    movePage("/myProfile");
+                  }}
+                >
                   <span className="Po-ProfileIconPos">
                     <FaUser size={22}></FaUser>
                   </span>
