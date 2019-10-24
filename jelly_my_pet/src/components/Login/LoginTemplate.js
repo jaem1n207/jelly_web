@@ -55,10 +55,11 @@ const LoginTemplate = ({ history }) => {
     axios
       .post(`${SERVER}/auth/login`, data)
       .then(res => {
+        movePage("/");
         console.log(res);
       })
       .catch(err => {
-        console.error(err);
+        alert("ID와 PW를 확인해주세요.");
       });
   };
 

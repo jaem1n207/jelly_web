@@ -1,12 +1,23 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Post.css";
-import { FaRegHeart, FaRegComment, FaImage } from "react-icons/fa";
+import {
+  FaRegHeart,
+  FaRegComment,
+  FaImage,
+  FaUser,
+  FaPencilAlt
+} from "react-icons/fa";
+import { IoIosLogOut } from "react-icons/io";
 import post_img1 from "image/Po-Cat.jpg";
 import post_img2 from "image/Po-Hedgehog.jpg";
 import { withRouter } from "react-router-dom";
 import cx from "classnames";
 
-const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
+const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
+  const movePage = url => {
+    history.push(url);
+  };
+
   const [comment, setComment] = useState("");
   const [WritePost, setWritePost] = useState("");
   const [isInputCheck, setIsInputCheck] = useState(true);
@@ -41,10 +52,45 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
     document.getElementById("comment").focus();
   }
 
+  function getFocusWrite() {
+    document.getElementById("writePost").focus();
+  }
+
   return (
     <Fragment>
       <div className="Po-Main">
         <div className="Po-MainPost">
+          <div className="Po-ProfilePos">
+            <div className="Po-ProfileBox">
+              <div className="Po-ProfileName">
+                <span>이름: {userName}이재민</span>
+              </div>
+              <ul className="Po-Ul">
+                <li>
+                  <span className="Po-ProfileIconPos">
+                    <FaUser size={22}></FaUser>
+                  </span>
+                  <span>내 프로필 보기</span>
+                </li>
+                <li onClick={() => getFocusWrite()}>
+                  <span className="Po-ProfileIconPos">
+                    <FaPencilAlt size={24}></FaPencilAlt>
+                  </span>
+                  <span>글 작성</span>
+                </li>
+                <li
+                  onClick={() => {
+                    movePage("/login");
+                  }}
+                >
+                  <span className="Po-ProfileIconPos">
+                    <IoIosLogOut size={24}></IoIosLogOut>
+                  </span>
+                  <span>로그아웃</span>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className="Po-Writing">
             <div className="Po-WritingInfo">
               <span>게시물 만들기</span>
@@ -63,11 +109,11 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg }) => {
             <div className="Po-WritingAdd">
               <ul className="Po-ulAdd">
                 <li className="Po-liAdd h3">
-                  <label for="Po-file" className="Po-FileBtn">
+                  <label className="Po-FileBtn">
                     <FaImage className="FileBtnImg" size={20} />
+                    <input type="file" id="Po-file"></input>
                     <span className="Po-FileText">사진/동영상</span>
                   </label>
-                  <input type="file" id="Po-file"></input>
                 </li>
                 <li className="Po-liAdd h7">
                   <button

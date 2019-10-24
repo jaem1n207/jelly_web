@@ -38,8 +38,8 @@ const Team = ({ history }) => {
         <div className="box">
           <FaRegUser className="box-img" />
           <h1>황대성</h1>
-          <h2>프론트엔드</h2>
-          <p></p>
+          <h2>안드로이드/IOS</h2>
+          <p>안드로이드/IOS 개발</p>
         </div>
         <div
           className="goMain"

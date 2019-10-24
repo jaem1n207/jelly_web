@@ -29,21 +29,12 @@ const Navigator = ({ history }) => {
               <input
                 className="search-txt"
                 type="text"
-                autocapitalize="none"
                 placeholder="Search..."
               />
               <IoIosSearch className="search-btn" />
             </div>
             <div className="right-item">
               <ul>
-                <li
-                  className="p1"
-                  onClick={() => {
-                    history.push("/login");
-                  }}
-                >
-                  로그아웃
-                </li>
                 <li
                   className="p1"
                   onClick={() => {
