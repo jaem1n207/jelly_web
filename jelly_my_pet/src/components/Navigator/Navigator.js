@@ -10,7 +10,7 @@ const Navigator = ({ history }) => {
   };
   return (
     <Fragment>
-      <div className="header">
+      <div className="header" style={{top:'0px'}}>
         <nav>
           <div className="left-item">
             <div

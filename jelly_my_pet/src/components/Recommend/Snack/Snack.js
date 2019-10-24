@@ -32,6 +32,47 @@ const Snack = () => {
                   <img className="sn-snackImg" src={dogLeash} />
                 </a>
               </div>
+              <div className="sn-snack">
+                <a href="https://front.wemakeprice.com/product/201531494?utm_source=naver_ep&utm_medium=PRICE_af&utm_campaign=null&NaPm=ct%3Dk1mzjnsw%7Cci%3D3ed18c7943951f247b0c632c0aebae39149e372e%7Ctr%3Dslct%7Csn%3D197023%7Chk%3D1e001d00713848b862a5b4002d2a13fbbbd1a83d" target="_blank">
+                  <img className="sn-snackImg" src={dogFood} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+              <div className="sn-snack">
+                <a href="https://smartstore.naver.com/attifriend/products/2478758874?NaPm=ct%3Dk1mzkmiw%7Cci%3D3ab0fc1aa0def688d1c1314f1d08a5b391861531%7Ctr%3Dslsl%7Csn%3D509086%7Cic%3D%7Chk%3D64a5ebdaed333bdd1cb79d39987a131da9bd61f7" target="_blank">
+                  <img className="sn-snackImg" src={dogLeash} />
+                </a>
+              </div>
+
             </div>
           </div>
       </>
