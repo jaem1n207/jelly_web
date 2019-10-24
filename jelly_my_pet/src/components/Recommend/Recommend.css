@@ -1,17 +1,29 @@
-.re-contents {
+.re-txts{
+    margin-top: 20%;
+    margin-left: 20%;
     display: flex;
-    flex-direction: column;
 }
 
-.re-topcontent {
-    margin-top: 8%;
+.re-contents{
+    display: flex;
+}
+.re-Lcontent{
+    display: flex;
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
 }
 
-.re-botcontent {
-    margin-top: 2%;
+.re-txt{
+    font-size: 2.0rem;
+    cursor: pointer;
+
 }
 
-.re-toptxt, .re-bottxt {
-    font-size: 2rem;
-    margin-left: 5%;
+.re-Rcontent{
+    display: flex;
+    box-sizing: border-box;
+    width:  70%;
+    height: 92%;
+    margin-top: 5%;
 }

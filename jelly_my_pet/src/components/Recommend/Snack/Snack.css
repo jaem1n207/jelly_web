@@ -1,6 +1,6 @@
 .sn-snacklist {
     display: flex;
-    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .sn-snackImg {
@@ -11,5 +11,5 @@
 }
 
 .sn-snack {
-    margin-left : 5%;
+    padding: 10px;
 } 

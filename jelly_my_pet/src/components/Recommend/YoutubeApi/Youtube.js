@@ -9,22 +9,22 @@ class Youtube extends Component {
     video_id : [],
     title : [],
   };
-  
+
   async getYoutubeinfo () {
     try {
       const info = await axios.get(`http://10.80.162.116:8080/rcmnd`);
       console.log(info);
       this.setState({
-        title: info.data.title,
-        video_id: info.data.video_id,
+        title: info.data.data.title,
+        video_id: info.data.data.video_id,
       });
     }catch (error){
       console.log(error);
     }
   }
 
-  componentDidMount(){
-    this.getYoutubeinfo();
+  async componentDidMount(){
+    await this.getYoutubeinfo();
   };
 
   render() {
