@@ -1,4 +1,4 @@
-section {
+.Po-Section {
   border: 0 solid #000;
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +7,7 @@ section {
 }
 .Po-Main {
   height: 100vh;
+  user-select: none;
 }
 .Po-MainPost {
   height: 90vh;
@@ -16,7 +17,7 @@ section {
   overflow-y: auto;
   flex-direction: column;
   position: absolute;
-  top: 7rem;
+  top: 6rem;
 }
 .Po-Post {
   margin-left: auto;

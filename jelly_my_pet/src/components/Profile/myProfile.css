@@ -1,0 +1,40 @@
+.Pro-Main {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.Pro-Container {
+  box-sizing: content-box;
+  width: 55%;
+  height: 85%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding: 2rem 1.6rem;
+}
+
+.Pro-Head {
+  width: 100%;
+  height: 30%;
+  background-color: red;
+  display: flex;
+}
+.Pro-Picture {
+  padding: 2rem;
+  flex-grow: 1;
+  margin-right: 2.2rem;
+}
+.Pro-Info {
+  flex-grow: 2;
+}
+.Pro-Post {
+  width: 100%;
+  height: 68%;
+  background-color: blue;
+}

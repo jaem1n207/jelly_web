@@ -12,6 +12,9 @@ import post_img1 from "image/Po-Cat.jpg";
 import post_img2 from "image/Po-Hedgehog.jpg";
 import { withRouter } from "react-router-dom";
 import cx from "classnames";
+import axios from "axios";
+import { SERVER } from "config/config.json";
+import Time from "react-time";
 
 const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
   const movePage = url => {
@@ -21,6 +24,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
   const [comment, setComment] = useState("");
   const [WritePost, setWritePost] = useState("");
   const [isInputCheck, setIsInputCheck] = useState(true);
+  const [article, setArticle] = useState([]);
 
   const onChangeComment = event => {
     setComment(event.target.value);
@@ -28,6 +32,12 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
 
   const onChangeWritePost = event => {
     setWritePost(event.target.value);
+  };
+
+  const getPost = () => {
+    axios.get(`${SERVER}/notice`).then(res => {
+      setArticle(res.data.data.post);
+    });
   };
 
   useEffect(() => {
@@ -45,6 +55,10 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
       setIsInputCheck(true);
     }
   }, [setIsInputCheck, WritePost]);
+
+  useEffect(() => {
+    getPost();
+  }, []);
 
   const [count, setCount] = useState(0);
 
@@ -134,155 +148,84 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
               </ul>
             </div>
           </div>
-          <div className="Po-Post">
-            <div className="Po-PostTop">
-              <div className="Po-PostUserName">
-                <p>이재민</p>
-                <div className="Po-PostTime">
-                  <p>2019-10-09 18:07:07초</p>
-                </div>
-              </div>
-            </div>
-            <div className="Po-PostImg">
-              <img className="Po-PostImgSize" src={post_img1} />
-            </div>
-            <div className="Po-PostMessage">
-              <p className="Po-Posts">누워있는 냥이 사진</p>
-            </div>
-            <div className="Po-PostBottom">
-              <section className="Po-PostFunction">
-                <span className="Po-PostFunctionPosition">
-                  <button
-                    className="Po-HeartBtn Po-Btn"
-                    onClick={() => setCount(count + 1)}
-                  >
-                    <FaRegHeart size={24}></FaRegHeart>
-                  </button>
-                </span>
-                <span className="Po-PostFunctionPosition">
-                  <button
-                    className="Po-CommentBtn Po-Btn"
-                    onClick={() => getFocus()}
-                  >
-                    <FaRegComment size={24}></FaRegComment>
-                  </button>
-                </span>
-                <span className="Po-PetName">반려동물: 나비 (여자)</span>
-              </section>
-              <section className="Po-HeartCnt">
-                <div className="Po-HeartDiv">
-                  <div className="Po-HeartDiv2">
-                    <button className="Po-HeartViewBtn">
-                      좋아요 <span>{count}</span>개
-                    </button>
+          {article.map((item, key) => {
+            return (
+              <div className="Po-Post">
+                <div className="Po-PostTop">
+                  <div className="Po-PostUserName">
+                    <p>제목 : {item.title}</p>
+                    <p>{item.userName}</p>
+                    <div className="Po-PostTime">
+                      <p>
+                        <Time value={item.date} format="YYYY/MM/DD hh:mm:ss" />
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </section>
-              <section className="Po-WriteComment">
-                <div className="Po-WriteCommentDiv">
-                  <form className="Po-WriteCommentForm" method="POST">
-                    <textarea
-                      id="comment"
-                      className="Po-WriteCommentArea"
-                      placeholder="댓글 달기..."
-                      autoComplete="off"
-                      autoCorrect="off"
-                      value={comment}
-                      onChange={onChangeComment}
-                    ></textarea>
-                    <button
-                      className={cx(
-                        { "Po-SubmitBtnStyle-disabled": isInputCheck },
-                        { "Po-SubmitBtnStyle-enabled": !isInputCheck }
-                      )}
-                      disabled
-                      type="submit"
-                    >
-                      게시
-                    </button>
-                  </form>
+                <div className="Po-PostImg">
+                  <img className="Po-PostImgSize" src={post_img1} />
                 </div>
-              </section>
-            </div>
-          </div>
-          <div className="Po-Post">
-            <div className="Po-PostTop">
-              <div className="Po-PostUserName">
-                <p>이재민</p>
-                <div className="Po-PostTime">
-                  <p>2019-10-09 18:07:07초</p>
+                <div className="Po-PostMessage">
+                  <p className="Po-Posts">{item.description}</p>
+                </div>
+                <div className="Po-PostBottom">
+                  <section className="Po-PostFunction Po-Section">
+                    <span className="Po-PostFunctionPosition">
+                      <button
+                        className="Po-HeartBtn Po-Btn"
+                        onClick={() => setCount(count + 1)}
+                      >
+                        <FaRegHeart size={24}></FaRegHeart>
+                      </button>
+                    </span>
+                    <span className="Po-PostFunctionPosition">
+                      <button
+                        className="Po-CommentBtn Po-Btn"
+                        onClick={() => getFocus()}
+                      >
+                        <FaRegComment size={24}></FaRegComment>
+                      </button>
+                    </span>
+                    <span className="Po-PetName">반려동물: {item.petName}</span>
+                  </section>
+                  <section className="Po-HeartCnt Po-Section">
+                    <div className="Po-HeartDiv">
+                      <div className="Po-HeartDiv2">
+                        <button className="Po-HeartViewBtn">
+                          좋아요 <span>{count}</span>개
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                  <section className="Po-WriteComment Po-Section">
+                    <div className="Po-WriteCommentDiv">
+                      <form className="Po-WriteCommentForm" method="POST">
+                        <textarea
+                          id="comment"
+                          className="Po-WriteCommentArea"
+                          placeholder="댓글 달기..."
+                          autoComplete="off"
+                          autoCorrect="off"
+                          value={comment}
+                          onChange={onChangeComment}
+                        ></textarea>
+                        <button
+                          className={cx(
+                            { "Po-SubmitBtnStyle-disabled": isInputCheck },
+                            { "Po-SubmitBtnStyle-enabled": !isInputCheck }
+                          )}
+                          disabled
+                          type="submit"
+                        >
+                          게시
+                        </button>
+                      </form>
+                    </div>
+                  </section>
                 </div>
               </div>
-            </div>
-            <div className="Po-PostImg">
-              <img className="Po-PostImgSize" src={post_img2} />
-            </div>
-            <div className="Po-PostMessage">
-              <p className="Po-Posts">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </div>
-            <div className="Po-PostBottom">
-              <section className="Po-PostFunction">
-                <span className="Po-PostFunctionPosition">
-                  <button
-                    className="Po-HeartBtn Po-Btn"
-                    onClick={() => setCount(count + 1)}
-                  >
-                    <FaRegHeart size={24}></FaRegHeart>
-                  </button>
-                </span>
-                <span className="Po-PostFunctionPosition">
-                  <button
-                    className="Po-CommentBtn Po-Btn"
-                    onClick={() => getFocus()}
-                  >
-                    <FaRegComment size={24}></FaRegComment>
-                  </button>
-                </span>
-                <span className="Po-PetName">반려동물: 나비 (여자)</span>
-              </section>
-              <section className="Po-HeartCnt">
-                <div className="Po-HeartDiv">
-                  <div className="Po-HeartDiv2">
-                    <button className="Po-HeartViewBtn">
-                      좋아요 <span>{count}</span>개
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <section className="Po-WriteComment">
-                <div className="Po-WriteCommentDiv">
-                  <form className="Po-WriteCommentForm" method="POST">
-                    <textarea
-                      id="comment"
-                      className="Po-WriteCommentArea"
-                      placeholder="댓글 달기..."
-                      autoComplete="off"
-                      autoCorrect="off"
-                      value={comment}
-                      onChange={onChangeComment}
-                    ></textarea>
-                    <button
-                      className={cx(
-                        { "Po-SubmitBtnStyle-disabled": isInputCheck },
-                        { "Po-SubmitBtnStyle-enabled": !isInputCheck }
-                      )}
-                      disabled
-                      type="submit"
-                    >
-                      게시
-                    </button>
-                  </form>
-                </div>
-              </section>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </Fragment>
