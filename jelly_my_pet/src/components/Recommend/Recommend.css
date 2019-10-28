@@ -2,6 +2,7 @@
     margin-top: 20%;
     margin-left: 20%;
     display: flex;
+    flex-direction: column;
 }
 
 .re-contents{
@@ -14,11 +15,6 @@
     height: 100%;
 }
 
-.re-txt{
-    font-size: 2.0rem;
-    cursor: pointer;
-
-}
 
 .re-Rcontent{
     display: flex;
@@ -26,4 +22,11 @@
     width:  70%;
     height: 92%;
     margin-top: 5%;
+}
+
+.re-txt{
+  border: 1px solid #00bfa5;
+  color: #00BFA5;
+  background-color: transparent;
+  padding-top: 20px;
 }

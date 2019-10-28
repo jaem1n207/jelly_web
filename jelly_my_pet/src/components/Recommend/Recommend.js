@@ -4,19 +4,28 @@ import "./Recommend.css";
 import { withRouter } from "react-router-dom";
 import Youtube from './YoutubeApi/Youtube';
 import Snack from './Snack/Snack';
+import "./button.css";
 
 class Recommend extends Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: true};
+    this.state = {isToggleOn: null};
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleYoutubeClick = this.handleYoutubeClick.bind(this);
+    this.handleSnackClick = this.handleSnackClick.bind(this);
   }
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
+  handleYoutubeClick() {
+    this.setState(() => ({
+      isToggleOn: false
     }));
   }
+  handleSnackClick() {
+    this.setState(() => ({
+      isToggleOn: true
+    }));
+  }
+
+
   render(){
     return (
       <>
@@ -27,8 +36,8 @@ class Recommend extends Component {
           <div className="re-contents">
             <div className="re-Lcontent">
               <div className="re-txts">
-                <input type="button" className="re-txt" onClick={this.handleClick}  value="추천 간식" />
-                <input type="button" className="re-txt" onClick={this.handleClick}  value="추천 동영상" />
+                <button class="bttn-stretch bttn-md bttn-primary" onClick={this.handleSnackClick}> 추천간식 </button>
+                <button class="bttn-stretch bttn-md bttn-primary" onClick={this.handleYoutubeClick}> 추천동영상 </button>
               </div>
             </div>
             <div className="re-Rcontent">
