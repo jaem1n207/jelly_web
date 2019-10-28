@@ -16,28 +16,65 @@ import axios from "axios";
 import { SERVER } from "config/config.json";
 import Time from "react-time";
 
-const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
+const Post = ({ history }) => {
   const movePage = url => {
     history.push(url);
   };
 
   const [comment, setComment] = useState("");
-  const [WritePost, setWritePost] = useState("");
+  const [WritePostTitle, setWritePostTitle] = useState("");
+  const [WritePostDescription, setWritePostDescription] = useState("");
   const [isInputCheck, setIsInputCheck] = useState(true);
   const [article, setArticle] = useState([]);
+  const [WritePostFile, setWritePostFile] = useState("");
 
   const onChangeComment = event => {
     setComment(event.target.value);
   };
 
-  const onChangeWritePost = event => {
-    setWritePost(event.target.value);
+  const onChangeWritePostTitle = event => {
+    setWritePostTitle(event.target.value);
+  };
+  const onChangeWritePostDescription = event => {
+    setWritePostDescription(event.target.value);
   };
 
   const getPost = () => {
     axios.get(`${SERVER}/notice`).then(res => {
       setArticle(res.data.data.post);
     });
+  };
+
+  const WritePost = () => {
+    let formdata = new FormData();
+    formdata.append("title", WritePostTitle);
+    formdata.append("description", WritePostDescription);
+    // formdata.append("file", );
+    axios
+      .post(`${SERVER}/notice`, formdata, {
+        headers: {
+          "x-access-token": localStorage.getItem("x-access-token")
+        }
+      })
+      .then(res => {
+        // alert(res.status);
+        alert("게시물 작성 성공!");
+      });
+  };
+
+  const modDescription = () => {
+    let getText = prompt("수정할 내용을 입력하세요");
+    document.identifyId.innerHTML = WritePostDescription;
+  };
+
+  const handleUpdate = () => {
+    if (WritePostDescription != null) {
+      let modButton = document.createElement("button");
+      modButton.style.visibility = "hidden";
+      // modButton.className = Po_Btn;
+      modButton.innerHTML = "수정";
+      modButton.onclick = modDescription();
+    }
   };
 
   useEffect(() => {
@@ -49,12 +86,12 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
   }, [setIsInputCheck, comment]);
 
   useEffect(() => {
-    if (WritePost.length > 0) {
+    if (WritePostTitle.length > 0) {
       setIsInputCheck(false);
     } else {
       setIsInputCheck(true);
     }
-  }, [setIsInputCheck, WritePost]);
+  }, [setIsInputCheck, WritePostTitle]);
 
   useEffect(() => {
     getPost();
@@ -67,7 +104,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
   }
 
   function getFocusWrite() {
-    document.getElementById("writePost").focus();
+    document.getElementById("writePostTitle").focus();
   }
 
   return (
@@ -77,7 +114,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
           <div className="Po-ProfilePos">
             <div className="Po-ProfileBox">
               <div className="Po-ProfileName">
-                <span>이름: {userName}이재민</span>
+                <span>이름: 오해성</span>
               </div>
               <ul className="Po-Ul">
                 <li
@@ -109,19 +146,31 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
               </ul>
             </div>
           </div>
+
           <div className="Po-Writing">
             <div className="Po-WritingInfo">
               <span>게시물 만들기</span>
             </div>
             <div className="Po-TextArea">
               <textarea
-                id="writePost"
-                className="Po-WritePostArea"
-                placeholder="무슨 생각을 하고 계신가요?"
+                id="writePostTitle"
+                className="Po-WritePostTitleArea"
+                placeholder="게시물의 제목을 입력해주세요"
                 autoComplete="off"
                 autoCorrect="off"
-                value={WritePost}
-                onChange={onChangeWritePost}
+                value={WritePostTitle}
+                onChange={onChangeWritePostTitle}
+              ></textarea>
+            </div>
+            <div className="Po-TextArea">
+              <textarea
+                id="writePostDescription"
+                className="Po-WritePostArea"
+                placeholder="게시물의 내용을 입력해주세요..."
+                autoComplete="off"
+                autoCorrect="off"
+                value={WritePostDescription}
+                onChange={onChangeWritePostDescription}
               ></textarea>
             </div>
             <div className="Po-WritingAdd">
@@ -129,11 +178,15 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
                 <li className="Po-liAdd h3">
                   <label className="Po-FileBtn">
                     <FaImage className="FileBtnImg" size={20} />
-                    <input type="file" id="Po-file"></input>
+                    <input
+                      type="file"
+                      id="Po-file"
+                      value={WritePostFile}
+                    ></input>
                     <span className="Po-FileText">사진/동영상</span>
                   </label>
                 </li>
-                <li className="Po-liAdd h7">
+                <li className="Po-liAdd h7" onClick={WritePost}>
                   <button
                     className={cx(
                       { "Po-WriteBtnStyle-disabled": isInputCheck },
@@ -153,21 +206,29 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
               <div className="Po-Post">
                 <div className="Po-PostTop">
                   <div className="Po-PostUserName">
-                    <p>제목 : {item.title}</p>
-                    <p>{item.userName}</p>
                     <div className="Po-PostTime">
-                      <p>
-                        <Time value={item.date} format="YYYY/MM/DD hh:mm:ss" />
-                      </p>
+                      <p>작성자: {item.userName}</p>
+                      <div className="Po-PostDatePos">
+                        <p>
+                          <Time
+                            value={item.date}
+                            format="YYYY/MM/DD hh:mm:ss"
+                          />
+                        </p>
+                      </div>
                     </div>
+                    <p className="Po-PostTitle">제목 : {item.title}</p>
                   </div>
+                </div>
+                <div className="Po-PostMessage">
+                  <p className="Po-Posts" onMouseOver={handleUpdate}>
+                    {item.description}
+                  </p>
                 </div>
                 <div className="Po-PostImg">
                   <img className="Po-PostImgSize" src={post_img1} />
                 </div>
-                <div className="Po-PostMessage">
-                  <p className="Po-Posts">{item.description}</p>
-                </div>
+
                 <div className="Po-PostBottom">
                   <section className="Po-PostFunction Po-Section">
                     <span className="Po-PostFunctionPosition">
@@ -199,7 +260,7 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
                   </section>
                   <section className="Po-WriteComment Po-Section">
                     <div className="Po-WriteCommentDiv">
-                      <form className="Po-WriteCommentForm" method="POST">
+                      <div className="Po-WriteCommentForm">
                         <textarea
                           id="comment"
                           className="Po-WriteCommentArea"
@@ -219,7 +280,8 @@ const Post = ({ userName, petInfo, contents, writeTime, postImg, history }) => {
                         >
                           게시
                         </button>
-                      </form>
+                        <button className="Po-AllComBtn">댓글 모두보기</button>
+                      </div>
                     </div>
                   </section>
                 </div>

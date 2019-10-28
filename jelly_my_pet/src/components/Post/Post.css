@@ -35,8 +35,38 @@
   padding-right: 16px;
   float: top;
 }
+.Po-PostTitle {
+  font-size: 1rem;
+}
+.Po-PostTime {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid lightgray;
+  font-size: 1.1rem;
+}
+.Po-PostTime > p {
+  display: inline;
+  margin-right: 1rem;
+}
 .Po-PostUserName {
   font-weight: bold;
+}
+.Po-AllComBtn {
+  border: 0;
+  color: #adb5bd;
+  padding: 0;
+  float: right;
+  width: 20%;
+  -webkit-appearance: none;
+  background: 0 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 .Po-PostMessage {
   padding-left: 16px;
@@ -45,8 +75,16 @@
   border-bottom: 1px solid lightgray;
 }
 .Po-Posts {
-  margin-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.7rem;
+  text-align: left;
+  font-weight: 550;
+  font-size: 0.97rem;
 }
+.Po-PostDatePos {
+  float: right;
+}
+
 .Po-PostImg {
   text-align: center;
   margin: 0 auto;
@@ -291,6 +329,18 @@
   font-weight: normal;
   letter-spacing: normal;
   line-height: 18px;
+  width: 97%;
+}
+.Po-WritePostTitleArea {
+  outline: 0;
+  border: none;
+  max-height: 20px;
+  min-height: 10px;
+  resize: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 20px;
   width: 97%;
 }
 .Po-WritingAdd {
