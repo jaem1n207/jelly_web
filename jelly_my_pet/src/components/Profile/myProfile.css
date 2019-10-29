@@ -3,7 +3,6 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
-  text-align: center;
   background-color: #fafafa;
   position: relative;
 }
@@ -12,7 +11,7 @@
   box-sizing: content-box;
   width: 55%;
   height: 85%;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -21,20 +20,103 @@
 
 .Pro-Head {
   width: 100%;
-  height: 30%;
-  background-color: red;
+  height: 15%;
   display: flex;
+  text-align: center;
 }
 .Pro-Picture {
   padding: 2rem;
   flex-grow: 1;
   margin-right: 2.2rem;
 }
-.Pro-Info {
-  flex-grow: 2;
-}
 .Pro-Post {
   width: 100%;
-  height: 68%;
-  background-color: blue;
+  height: 85%;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+}
+.Pro-title{
+  flex-grow: 2;
+}
+.Pro-Art{
+  padding-top: 10 px;
+}
+.Pro-bor{
+  border-top: 1px solid #dadce0;
+}
+.Pro-Content{
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+.Pro-Pass{
+  padding-top: 20px;
+}
+
+.Pro-Pet{
+  padding-top: 20px;
+}
+
+.Pro-MVPet{
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.Pro-MVPass{
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.Pro-MVName{
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.Pro-FRight{ 
+  display: flex;
+  margin-left: 233px;
+  letter-spacing: .00625em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: #202124;
+}
+
+.Pro-Right{
+  display: flex;
+  margin-left: 210px;
+  letter-spacing: .00625em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: #202124;
+}
+
+.Pro-EndContent{
+  position: absolute;
+  right: 20px;
+}
+
+.Pro-LeftContent{
+  letter-spacing: .07272727em;
+  font: 400 15px/20px Roboto,Arial,sans-serif;
+  font-size: .6875rem;
+  font-weight: 500;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  color:#5f6368;
 }
