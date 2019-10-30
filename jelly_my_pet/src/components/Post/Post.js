@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
 import "./Post.css";
 import {
   FaRegHeart,
@@ -8,13 +8,12 @@ import {
   FaPencilAlt
 } from "react-icons/fa";
 import { IoIosLogOut } from "react-icons/io";
-import post_img1 from "image/Po-Cat.jpg";
-import post_img2 from "image/Po-Hedgehog.jpg";
 import { withRouter } from "react-router-dom";
 import cx from "classnames";
 import axios from "axios";
 import { SERVER } from "config/config.json";
 import Time from "react-time";
+import { log } from "handlebars";
 
 const Post = ({ history }) => {
   const movePage = url => {
@@ -25,7 +24,11 @@ const Post = ({ history }) => {
   const [WritePostTitle, setWritePostTitle] = useState("");
   const [WritePostDescription, setWritePostDescription] = useState("");
   const [isInputCheck, setIsInputCheck] = useState(true);
-  const [article, setArticle] = useState([]);
+  const [postList, setPostList] = useState([]);
+
+  let postArray = [];
+  let imageArray = [];
+
   const [WritePostFile, setWritePostFile] = useState("");
 
   const onChangeComment = event => {
@@ -39,17 +42,69 @@ const Post = ({ history }) => {
     setWritePostDescription(event.target.value);
   };
 
-  const getPost = () => {
-    axios.get(`${SERVER}/notice`).then(res => {
-      setArticle(res.data.data.post);
+  //포스트를 받아와 게시글ID와 이미지ID를 매칭
+  const handleMatchPost = async () => {
+    let array = [];
+    let data = [];
+    console.log("test:" + postArray);
+    postArray.forEach(item => {
+      imageArray.forEach(image => {
+        console.log(
+          "item.id = " +
+            item.id +
+            " ***** item identify id = " +
+            item.identifyId +
+            "*****image id*****=" +
+            image.id +
+            " ***** imageidentifyId = " +
+            image.identifyId
+        );
+
+        data = {
+          ...item,
+          // ...image,
+          imageSrc: item.identifyId === image.identifyId ? image.fileName : ""
+        };
+        console.log("data: ", image.fileName);
+      });
+      // array = [data, ...postList];
+      array.push(data);
     });
+
+    // postArray.forEach(i => {
+    //   console.log("item.id: ", i.id);
+
+    // });
+
+    console.log("postList", array);
+
+    setPostList(array);
+  };
+
+  const getPost = useCallback(async () => {
+    const data = await axios.get(`${SERVER}/notice`);
+    postArray = await data.data.data.post;
+    imageArray = await data.data.data.file;
+    await handleMatchPost();
+  }, []);
+
+  //파일 선택 시 실행
+  const handleFileInput = event => {
+    let item = [];
+    for (var i = 0; i < event.target.files.length; i++) {
+      item[i] = event.target.files[i];
+      setWritePostFile(item[i]);
+      console.log(i);
+    }
+    console.log(item);
+    // setWritePostFile(event.target);
   };
 
   const WritePost = () => {
     let formdata = new FormData();
     formdata.append("title", WritePostTitle);
     formdata.append("description", WritePostDescription);
-    // formdata.append("file", );
+    formdata.append("file", WritePostFile);
     axios
       .post(`${SERVER}/notice`, formdata, {
         headers: {
@@ -59,22 +114,12 @@ const Post = ({ history }) => {
       .then(res => {
         // alert(res.status);
         alert("게시물 작성 성공!");
+        // WritePostTitle.value = "";
+        // WritePostDescription.value = "";
+      })
+      .catch(err => {
+        alert("내용을 적어주세요!");
       });
-  };
-
-  const modDescription = () => {
-    let getText = prompt("수정할 내용을 입력하세요");
-    document.identifyId.innerHTML = WritePostDescription;
-  };
-
-  const handleUpdate = () => {
-    if (WritePostDescription != null) {
-      let modButton = document.createElement("button");
-      modButton.style.visibility = "hidden";
-      // modButton.className = Po_Btn;
-      modButton.innerHTML = "수정";
-      modButton.onclick = modDescription();
-    }
   };
 
   useEffect(() => {
@@ -95,7 +140,7 @@ const Post = ({ history }) => {
 
   useEffect(() => {
     getPost();
-  }, []);
+  }, [getPost]);
 
   const [count, setCount] = useState(0);
 
@@ -182,7 +227,9 @@ const Post = ({ history }) => {
                       type="file"
                       id="Po-file"
                       value={WritePostFile}
-                    ></input>
+                      onChange={handleFileInput}
+                      multiple="true"
+                    />
                     <span className="Po-FileText">사진/동영상</span>
                   </label>
                 </li>
@@ -201,9 +248,9 @@ const Post = ({ history }) => {
               </ul>
             </div>
           </div>
-          {article.map((item, key) => {
+          {postList.map((item, key) => {
             return (
-              <div className="Po-Post">
+              <div className="Po-Post" key={key}>
                 <div className="Po-PostTop">
                   <div className="Po-PostUserName">
                     <div className="Po-PostTime">
@@ -221,12 +268,12 @@ const Post = ({ history }) => {
                   </div>
                 </div>
                 <div className="Po-PostMessage">
-                  <p className="Po-Posts" onMouseOver={handleUpdate}>
-                    {item.description}
-                  </p>
+                  <p className="Po-Posts">{item.description}</p>
                 </div>
                 <div className="Po-PostImg">
-                  <img className="Po-PostImgSize" src={post_img1} />
+                  <div className="Po-PostImgSize">
+                    <img src={image.imageSrc} alt={image.title} />
+                  </div>
                 </div>
 
                 <div className="Po-PostBottom">
