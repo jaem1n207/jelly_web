@@ -69,6 +69,7 @@
   font-size: 0.9rem;
 }
 .Po-PostMessage {
+  margin-top: 1rem;
   padding-left: 16px;
   padding-right: 16px;
   text-align: center;
@@ -76,10 +77,10 @@
 }
 .Po-Posts {
   padding-left: 0.5rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   text-align: left;
-  font-weight: 550;
-  font-size: 0.97rem;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 .Po-PostDatePos {
   float: right;
@@ -114,6 +115,13 @@
 .Po-HeartBtn:active {
   color: red;
 }
+.Po-HeartBtn.active {
+  color: red;
+}
+.Po-HeartBtn.normal {
+  color: none;
+}
+
 .Po-Btn {
   border: none;
   background-color: #ffffff;

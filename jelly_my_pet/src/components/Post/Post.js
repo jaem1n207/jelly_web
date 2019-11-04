@@ -63,7 +63,7 @@ const Post = ({ history }) => {
         data = {
           ...item,
           // ...image,
-          imageSrc: item.identifyId === image.identifyId ? image.fileName : ""
+          imageSrc: item.id === image.identifyId ? image.fileName : ""
         };
         console.log("data: ", image.fileName);
       });
@@ -91,6 +91,11 @@ const Post = ({ history }) => {
   //파일 선택 시 실행
   const handleFileInput = event => {
     let item = [];
+    // for (var i = event.target.files.length; i == 0; i--) {
+    //   item[i] = event.target.files[i];
+    //   setWritePostFile(item[i]);
+    //   console.log(i);
+    // }
     for (var i = 0; i < event.target.files.length; i++) {
       item[i] = event.target.files[i];
       setWritePostFile(item[i]);
@@ -99,6 +104,12 @@ const Post = ({ history }) => {
     console.log(item);
     // setWritePostFile(event.target);
   };
+
+  // function reset() {
+  //   if (WritePostTitle != null && confirm("글을 작성하시겠습니까?")) {
+  //     WritePostTitle.value = "";
+  //   }
+  // }
 
   const WritePost = () => {
     let formdata = new FormData();
@@ -114,8 +125,11 @@ const Post = ({ history }) => {
       .then(res => {
         // alert(res.status);
         alert("게시물 작성 성공!");
-        // WritePostTitle.value = "";
-        // WritePostDescription.value = "";
+        // reset();
+        getPost();
+
+        // document.getElementById("writePostTitle").value = "";
+        // document.getElementById("writePostDescription").value = "";
       })
       .catch(err => {
         alert("내용을 적어주세요!");
@@ -143,6 +157,14 @@ const Post = ({ history }) => {
   }, [getPost]);
 
   const [count, setCount] = useState(0);
+
+  function upCount() {
+    if (count < 1) {
+      setCount(count + 1);
+    } else if (count >= 1) {
+      setCount(count - 1);
+    }
+  }
 
   function getFocus() {
     document.getElementById("comment").focus();
@@ -248,7 +270,7 @@ const Post = ({ history }) => {
               </ul>
             </div>
           </div>
-          {postList.map((item, key) => {
+          {postList.reverse().map((item, key) => {
             return (
               <div className="Po-Post" key={key}>
                 <div className="Po-PostTop">
@@ -270,18 +292,18 @@ const Post = ({ history }) => {
                 <div className="Po-PostMessage">
                   <p className="Po-Posts">{item.description}</p>
                 </div>
-                <div className="Po-PostImg">
+                {/* <div className="Po-PostImg">
                   <div className="Po-PostImgSize">
-                    <img src={image.imageSrc} alt={image.title} />
+                    <img src={item.imageSrc} alt={item.title} />
                   </div>
-                </div>
+                </div> */}
 
                 <div className="Po-PostBottom">
                   <section className="Po-PostFunction Po-Section">
                     <span className="Po-PostFunctionPosition">
                       <button
                         className="Po-HeartBtn Po-Btn"
-                        onClick={() => setCount(count + 1)}
+                        onClick={() => upCount()}
                       >
                         <FaRegHeart size={24}></FaRegHeart>
                       </button>

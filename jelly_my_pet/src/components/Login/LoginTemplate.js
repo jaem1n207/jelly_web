@@ -55,6 +55,7 @@ const LoginTemplate = ({ history }) => {
     axios
       .post(`${SERVER}/auth/login`, data)
       .then(res => {
+        alert("로그인 성공!");
         window.localStorage.setItem("x-access-token", res.data.data.token);
         movePage("/");
         console.log(res);

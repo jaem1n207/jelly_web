@@ -8,8 +8,9 @@ import Popup from "reactjs-popup";
 import { appendFile } from "fs";
 import axios from "axios";
 import { SERVER } from "config/config.json";
+import Time from "react-time";
 
-const myProfile = ({ history }) => {
+const MyProfile = ({ history }) => {
   const movePage = url => {
     history.push(url);
   };
@@ -23,10 +24,22 @@ const myProfile = ({ history }) => {
   const [postList, setPostList] = useState([]);
   const [time, setTime] = useState([]);
   const [title, setTitle] = useState([]);
+  const [article, setArticle] = useState([]);
 
   useEffect(() => {
     getUserData();
   }, []);
+
+  // const getUserPost = () => {
+  //   await axios
+  //     .get(`${SERVER}/member`, {
+  //       headers: {
+  //         "x-access-token": localStorage.getItem("x-access-token")
+  //       }
+  //     }).then(res => {
+  //       setArticle(res.data.data.userPostData);
+  //     })
+  // }
 
   const getUserData = async () => {
     await axios
@@ -134,6 +147,8 @@ const myProfile = ({ history }) => {
                     <h2>최근 작성한 글</h2>
                   </div>
                 </div>
+
+                
                 <div className="Pro-Content">
                   <div className="Pro-Name">
                     <a className="Pro-MVName">
