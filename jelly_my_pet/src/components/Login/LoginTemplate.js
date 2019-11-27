@@ -64,6 +64,19 @@ const LoginTemplate = ({ history }) => {
         alert("ID와 PW를 확인해주세요.");
       });
   };
+  const onKeyPress = e => {
+    switch (e.which) {
+      case 13:
+        handleLogin();
+        break;
+    }
+  };
+
+  // Enter KeyCode: 13
+  // const keyevent = e => {
+  //   var keycode = e.keyCode;
+  //   alert("키값:" + keycode);
+  // };
 
   return (
     <Fragment>
@@ -107,6 +120,7 @@ const LoginTemplate = ({ history }) => {
               name=""
               value="로그인"
               onClick={handleLogin}
+              onKeyPress={onKeyPress}
             />
             <input
               className="Lo-Btn"
@@ -119,6 +133,13 @@ const LoginTemplate = ({ history }) => {
             />
           </div>
         </div>
+        {/* <div className="Po-TestDiv">
+          <input
+            type="text"
+            onKeyDown={keyevent}
+            className="Po-keyTest"
+          ></input>
+        </div> */}
       </div>
     </Fragment>
   );
